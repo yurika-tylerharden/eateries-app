@@ -30,7 +30,7 @@ struct RestaurantListView: View {
         .navigationBarItems(leading: EditButton(), trailing:Button(action: onAdd) {
             Image(systemName: "plus")
         })
-        .navigationBarTitle(Text("Favourite Foods"))
+        .navigationBarTitle(Text("The Best Eateries"))
     }
 //    deletes selected food
 //    private func onDelete() {

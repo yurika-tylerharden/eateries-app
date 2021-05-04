@@ -29,6 +29,9 @@ struct EditView: View {
             //Navigation view containing list of the relevant information about selected food, divided into sections
             EditRestaurantDetailListView(restaurant: $restaurant)
         }
+        .onDisappear {
+            EateriesApp.save()
+        }
     }
 }
 

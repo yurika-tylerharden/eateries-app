@@ -37,8 +37,6 @@ struct Restaurant: Hashable, Codable, Identifiable   {
         }
         return uiImage
     }
-
-    
 }
 
 extension Binding where Value: MutableCollection, Value.Element: Identifiable {

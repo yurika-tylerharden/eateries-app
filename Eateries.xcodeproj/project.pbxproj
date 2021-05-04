@@ -112,6 +112,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B3688B9126411056006A8EF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3688B89264106AD006A8EF9 /* Master Views */,
+				B3688B8826410695006A8EF9 /* Detail Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B3E695B42640FCFE008FCFAC = {
 			isa = PBXGroup;
 			children = (
@@ -136,12 +145,11 @@
 			isa = PBXGroup;
 			children = (
 				B3E695C02640FCFE008FCFAC /* EateriesApp.swift */,
-				B3688B89264106AD006A8EF9 /* Master Views */,
+				B3688B9126411056006A8EF9 /* Views */,
 				B3E695C42640FCFE008FCFAC /* Assets.xcassets */,
 				B3E695C92640FCFE008FCFAC /* Info.plist */,
 				B3E695C62640FCFE008FCFAC /* Preview Content */,
 				B3688B8D264106BE006A8EF9 /* Model */,
-				B3688B8826410695006A8EF9 /* Detail Views */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
