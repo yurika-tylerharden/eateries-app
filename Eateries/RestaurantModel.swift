@@ -20,7 +20,24 @@ struct Restaurant: Hashable, Codable, Identifiable   {
     var reviews: Array<String>
 
     //will return UIImage from a URL string
-   
+    var imageURL: UIImage {
+        let emptyImage = UIImage(named: "placeholder")!
+        if image == "" {
+            return emptyImage
+
+        }
+        guard let url = URL(string: image) else {
+            return emptyImage
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            return emptyImage
+        }
+        guard let uiImage = UIImage(data: data) else {
+            return UIImage()
+        }
+        return uiImage
+    }
+
     
 }
 
