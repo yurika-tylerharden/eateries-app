@@ -10,6 +10,9 @@
 		B3688B682640FE23006A8EF9 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B672640FE23006A8EF9 /* RestaurantModel.swift */; };
 		B3688B702640FF79006A8EF9 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */; };
 		B3688B752640FF9D006A8EF9 /* RestaurantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */; };
+		B3688B7A26410159006A8EF9 /* DetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B7926410159006A8EF9 /* DetailRoute.swift */; };
+		B3688B7F26410173006A8EF9 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B7E26410173006A8EF9 /* RestaurantDetailView.swift */; };
+		B3688B8426410180006A8EF9 /* RestaurantEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B8326410180006A8EF9 /* RestaurantEditView.swift */; };
 		B3E695C12640FCFE008FCFAC /* EateriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E695C02640FCFE008FCFAC /* EateriesApp.swift */; };
 		B3E695C32640FCFE008FCFAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E695C22640FCFE008FCFAC /* ContentView.swift */; };
 		B3E695C52640FCFE008FCFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E695C42640FCFE008FCFAC /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		B3688B672640FE23006A8EF9 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 		B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellView.swift; sourceTree = "<group>"; };
+		B3688B7926410159006A8EF9 /* DetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoute.swift; sourceTree = "<group>"; };
+		B3688B7E26410173006A8EF9 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
+		B3688B8326410180006A8EF9 /* RestaurantEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantEditView.swift; sourceTree = "<group>"; };
 		B3E695BD2640FCFE008FCFAC /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E695C02640FCFE008FCFAC /* EateriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesApp.swift; sourceTree = "<group>"; };
 		B3E695C22640FCFE008FCFAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 				B3688B672640FE23006A8EF9 /* RestaurantModel.swift */,
 				B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */,
 				B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */,
+				B3688B7926410159006A8EF9 /* DetailRoute.swift */,
+				B3688B7E26410173006A8EF9 /* RestaurantDetailView.swift */,
+				B3688B8326410180006A8EF9 /* RestaurantEditView.swift */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -268,9 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3688B7A26410159006A8EF9 /* DetailRoute.swift in Sources */,
+				B3688B7F26410173006A8EF9 /* RestaurantDetailView.swift in Sources */,
 				B3688B682640FE23006A8EF9 /* RestaurantModel.swift in Sources */,
 				B3E695C32640FCFE008FCFAC /* ContentView.swift in Sources */,
 				B3E695C12640FCFE008FCFAC /* EateriesApp.swift in Sources */,
+				B3688B8426410180006A8EF9 /* RestaurantEditView.swift in Sources */,
 				B3688B702640FF79006A8EF9 /* RestaurantListView.swift in Sources */,
 				B3688B752640FF9D006A8EF9 /* RestaurantCellView.swift in Sources */,
 			);
