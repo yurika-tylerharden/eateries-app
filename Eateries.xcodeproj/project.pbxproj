@@ -84,6 +84,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3688B8826410695006A8EF9 /* Detail Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3688B7926410159006A8EF9 /* DetailRoute.swift */,
+				B3688B7E26410173006A8EF9 /* RestaurantDetailView.swift */,
+				B3688B8326410180006A8EF9 /* RestaurantEditView.swift */,
+			);
+			path = "Detail Views";
+			sourceTree = "<group>";
+		};
+		B3688B89264106AD006A8EF9 /* Master Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3E695C22640FCFE008FCFAC /* ContentView.swift */,
+				B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */,
+				B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */,
+			);
+			path = "Master Views";
+			sourceTree = "<group>";
+		};
+		B3688B8D264106BE006A8EF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3688B672640FE23006A8EF9 /* RestaurantModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B3E695B42640FCFE008FCFAC = {
 			isa = PBXGroup;
 			children = (
@@ -108,16 +136,12 @@
 			isa = PBXGroup;
 			children = (
 				B3E695C02640FCFE008FCFAC /* EateriesApp.swift */,
-				B3E695C22640FCFE008FCFAC /* ContentView.swift */,
+				B3688B89264106AD006A8EF9 /* Master Views */,
 				B3E695C42640FCFE008FCFAC /* Assets.xcassets */,
 				B3E695C92640FCFE008FCFAC /* Info.plist */,
 				B3E695C62640FCFE008FCFAC /* Preview Content */,
-				B3688B672640FE23006A8EF9 /* RestaurantModel.swift */,
-				B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */,
-				B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */,
-				B3688B7926410159006A8EF9 /* DetailRoute.swift */,
-				B3688B7E26410173006A8EF9 /* RestaurantDetailView.swift */,
-				B3688B8326410180006A8EF9 /* RestaurantEditView.swift */,
+				B3688B8D264106BE006A8EF9 /* Model */,
+				B3688B8826410695006A8EF9 /* Detail Views */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";

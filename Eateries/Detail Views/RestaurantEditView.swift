@@ -57,12 +57,14 @@ struct EditRestaurantDetailListView: View {
     var body: some View {
 
             List {
-                Section(header: Text("About")) {
+                Section(header: Text("Location")) {
                     
                     TextEditor(text: $restaurant.location)
                         .font(.callout)
                         .foregroundColor(Color.gray)
                         .padding(8.0)
+                }.padding(8.0)
+                Section(header: Text("Notes")) {
                     TextEditor(text: $restaurant.notes)
                         .font(.subheadline)
                         .padding(8.0)

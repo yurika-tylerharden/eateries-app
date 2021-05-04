@@ -61,13 +61,14 @@ struct RestaurantDetailListView: View {
     var body: some View {
         
             List {
-                Section(header: Text("About")) {
+                Section(header: Text("Location")) {
                     Text(restaurant.location)
                         .font(.callout)
                         .foregroundColor(Color.gray)
                         .italic()
                         .padding(8.0)
-                    
+                }
+                Section(header: Text("Notes")) {
                     Text(restaurant.notes)
                         .font(.subheadline)
                         .padding(8.0)
