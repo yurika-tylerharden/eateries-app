@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B3688B682640FE23006A8EF9 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B672640FE23006A8EF9 /* RestaurantModel.swift */; };
+		B3688B702640FF79006A8EF9 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */; };
+		B3688B752640FF9D006A8EF9 /* RestaurantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */; };
 		B3E695C12640FCFE008FCFAC /* EateriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E695C02640FCFE008FCFAC /* EateriesApp.swift */; };
 		B3E695C32640FCFE008FCFAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E695C22640FCFE008FCFAC /* ContentView.swift */; };
 		B3E695C52640FCFE008FCFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E695C42640FCFE008FCFAC /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		B3688B672640FE23006A8EF9 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
+		B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
+		B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellView.swift; sourceTree = "<group>"; };
 		B3E695BD2640FCFE008FCFAC /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E695C02640FCFE008FCFAC /* EateriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesApp.swift; sourceTree = "<group>"; };
 		B3E695C22640FCFE008FCFAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				B3E695C92640FCFE008FCFAC /* Info.plist */,
 				B3E695C62640FCFE008FCFAC /* Preview Content */,
 				B3688B672640FE23006A8EF9 /* RestaurantModel.swift */,
+				B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */,
+				B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 				B3688B682640FE23006A8EF9 /* RestaurantModel.swift in Sources */,
 				B3E695C32640FCFE008FCFAC /* ContentView.swift in Sources */,
 				B3E695C12640FCFE008FCFAC /* EateriesApp.swift in Sources */,
+				B3688B702640FF79006A8EF9 /* RestaurantListView.swift in Sources */,
+				B3688B752640FF9D006A8EF9 /* RestaurantCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

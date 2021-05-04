@@ -6,16 +6,27 @@
 //
 
 import SwiftUI
+//This structure defines the master view of the app containing a list of recipes
+struct MasterView: View {
+    @Binding var restaurants: [Restaurant]
 
-struct ContentView: View {
     var body: some View {
-        Text("Hello, Eateries!")
-            .padding()
+        //place NavigationView inside the body
+        NavigationView {
+            //List inside NavigationView
+            RestaurantListView(restaurants: $restaurants)
+        }
+        //Fixes issues with navigation view on iPad and larger devices
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MasterView(restaurants: Binding(get: {
+            EateriesApp.model
+        }, set: { newValue in
+            EateriesApp.model = newValue
+        }))
     }
 }
