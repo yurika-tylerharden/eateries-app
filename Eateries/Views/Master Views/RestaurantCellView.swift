@@ -10,11 +10,11 @@ import SwiftUI
 import SwiftUI
 
 struct RestaurantCell : View {
-    @Binding var restaurant: Restaurant
+    @ObservedObject var restaurant: Restaurant
 
     var body: some View {
         return NavigationLink(
-            destination: RestaurantDetail(restaurant: $restaurant),
+            destination: RestaurantDetail(restaurant: restaurant),
             label: {
                 //displays image and name/decription inside a hstack
                 HStack {

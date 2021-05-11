@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct EateriesApp: App {
     
-    @State var model: [Restaurant] = EateriesApp.model
     static var model: [Restaurant] = {
         guard let data  = try? Data(contentsOf: EateriesApp.fileURL),
               let model = try? JSONDecoder().decode([Restaurant].self, from: data) else {
@@ -18,18 +17,19 @@ struct EateriesApp: App {
         }
         return model
     }()
-    static var modelBinding: Binding<[Restaurant]>?
-    
 
     var body: some Scene {
-        EateriesApp.modelBinding = $model
-        return WindowGroup {
-            MasterView(restaurants: $model)
+        WindowGroup {
+            ContentView(restaurants: Binding(get: {
+                EateriesApp.model
+            }, set: { newValue in
+                EateriesApp.model = newValue
+            }))
         }
     }
 
     static var fileURL: URL {
-        let fileName = "restaurantsdata.json"
+        let fileName = "eateriesData.json"
         let fm = FileManager.default
         guard let documentDir = fm.urls(for: .documentDirectory, in: .userDomainMask).first else { return URL(fileURLWithPath: "/") }
         let fileURL = documentDir.appendingPathComponent(fileName)
@@ -38,7 +38,7 @@ struct EateriesApp: App {
 
     static func save() {
         do {
-            let data = try JSONEncoder().encode(modelBinding?.wrappedValue ?? model)
+            let data = try JSONEncoder().encode(model)
             try data.write(to: fileURL, options: .atomic)
             guard let dataString = String(data: data, encoding: .utf8) else { return }
             print(dataString)

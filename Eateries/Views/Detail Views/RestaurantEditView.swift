@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditView: View {
-    @Binding var restaurant: Restaurant
+    @ObservedObject var restaurant: Restaurant
     
     var body: some View {
         VStack() {
@@ -27,7 +27,7 @@ struct EditView: View {
                     .padding()
             }
             //Navigation view containing list of the relevant information about selected food, divided into sections
-            EditRestaurantDetailListView(restaurant: $restaurant)
+            EditRestaurantDetailListView(restaurant: restaurant)
         }
         .onDisappear {
             EateriesApp.save()
@@ -36,25 +36,25 @@ struct EditView: View {
 }
 
 
-struct BindingViewExamplePreviewContainer_2 : View {
-    @State var restaurant = restaurants[0]
+//struct BindingViewExamplePreviewContainer_2 : View {
+//    @State var restaurant = restaurants[0]
+//
+//     var body: some View {
+//        EditView(restaurant: $restaurant)
+//     }
+//}
 
-     var body: some View {
-        EditView(restaurant: $restaurant)
-     }
-}
-
-#if DEBUG
-struct BindingViewExample_2_Previews : PreviewProvider {
-    static var previews: some View {
-        BindingViewExamplePreviewContainer_2()
-    }
-}
-#endif
+//#if DEBUG
+//struct BindingViewExample_2_Previews : PreviewProvider {
+//    static var previews: some View {
+//        BindingViewExamplePreviewContainer_2()
+//    }
+//}
+//#endif
 
 
 struct EditRestaurantDetailListView: View {
-    @Binding var restaurant: Restaurant
+    @ObservedObject var restaurant: Restaurant
     @Environment(\.editMode) var mode
     
     var body: some View {
@@ -73,7 +73,7 @@ struct EditRestaurantDetailListView: View {
                         .padding(8.0)
                 }.padding(8.0)
                 Section(header: HStack {
-                    Text("Recipe")
+                    Text("Reviews")
                     Button(action: AddReview) {
                         Image(systemName: "plus").foregroundColor(.pink)
                     }

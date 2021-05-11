@@ -13,6 +13,7 @@
 		B3688B7A26410159006A8EF9 /* DetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B7926410159006A8EF9 /* DetailRoute.swift */; };
 		B3688B7F26410173006A8EF9 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B7E26410173006A8EF9 /* RestaurantDetailView.swift */; };
 		B3688B8426410180006A8EF9 /* RestaurantEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B8326410180006A8EF9 /* RestaurantEditView.swift */; };
+		B396813D2643BAC900A498D8 /* ReviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396813C2643BAC900A498D8 /* ReviewCellView.swift */; };
 		B3E695C12640FCFE008FCFAC /* EateriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E695C02640FCFE008FCFAC /* EateriesApp.swift */; };
 		B3E695C32640FCFE008FCFAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E695C22640FCFE008FCFAC /* ContentView.swift */; };
 		B3E695C52640FCFE008FCFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E695C42640FCFE008FCFAC /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		B3688B7926410159006A8EF9 /* DetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoute.swift; sourceTree = "<group>"; };
 		B3688B7E26410173006A8EF9 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		B3688B8326410180006A8EF9 /* RestaurantEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantEditView.swift; sourceTree = "<group>"; };
+		B396813C2643BAC900A498D8 /* ReviewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCellView.swift; sourceTree = "<group>"; };
 		B3E695BD2640FCFE008FCFAC /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E695C02640FCFE008FCFAC /* EateriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesApp.swift; sourceTree = "<group>"; };
 		B3E695C22640FCFE008FCFAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B3688B7926410159006A8EF9 /* DetailRoute.swift */,
 				B3688B7E26410173006A8EF9 /* RestaurantDetailView.swift */,
 				B3688B8326410180006A8EF9 /* RestaurantEditView.swift */,
+				B396813C2643BAC900A498D8 /* ReviewCellView.swift */,
 			);
 			path = "Detail Views";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				B3E695C12640FCFE008FCFAC /* EateriesApp.swift in Sources */,
 				B3688B8426410180006A8EF9 /* RestaurantEditView.swift in Sources */,
 				B3688B702640FF79006A8EF9 /* RestaurantListView.swift in Sources */,
+				B396813D2643BAC900A498D8 /* ReviewCellView.swift in Sources */,
 				B3688B752640FF9D006A8EF9 /* RestaurantCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Eateries/Preview Content\"";
+				DEVELOPMENT_TEAM = TLFCRD5283;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Eateries/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -496,6 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Eateries/Preview Content\"";
+				DEVELOPMENT_TEAM = TLFCRD5283;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Eateries/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

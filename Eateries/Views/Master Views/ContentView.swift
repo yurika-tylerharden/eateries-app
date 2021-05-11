@@ -7,7 +7,7 @@
 
 import SwiftUI
 //This structure defines the master view of the app containing a list of recipes
-struct MasterView: View {
+struct ContentView: View {
     @Binding var restaurants: [Restaurant]
 
     var body: some View {
@@ -21,12 +21,12 @@ struct MasterView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MasterView(restaurants: Binding(get: {
-            EateriesApp.model
-        }, set: { newValue in
-            EateriesApp.model = newValue
-        }))
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(restaurants: Binding(get: {
+//            EateriesApp.model
+//        }, set: { newValue in
+//            EateriesApp.model = newValue
+//        }))
+//    }
+//}

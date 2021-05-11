@@ -13,8 +13,10 @@ struct RestaurantListView: View {
 
     var body: some View {
         List {
-            ForEach(restaurants) {
-                RestaurantCell(restaurant: $restaurants[identifiedBy: $0])
+//            ForEach(restaurants, id: \.self) { restaurant in
+//                RestaurantCell(restaurant: restaurant)
+            ForEach(0..<restaurants.count) { resturant in
+                RestaurantCell(restaurant: restaurants[resturant])
 //            Performs delete function
             }.onDelete {
                 restaurants.remove(atOffsets: $0)
@@ -32,11 +34,7 @@ struct RestaurantListView: View {
         })
         .navigationBarTitle(Text("The Best Eateries"))
     }
-//    deletes selected food
-//    private func onDelete() {
-//        foods.remove(atOffsets: $0)
-////        FavouriteFoodApp.save()
-//    }
+
 //    //creates a new food with placeholder data
     private func onAdd() {
         restaurants.append(Restaurant(name: "New Restaurant", location: "Enter location", notes: "Enter notes", image: "placeholder", reviews: ["", ""]))

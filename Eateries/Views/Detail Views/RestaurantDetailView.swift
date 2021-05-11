@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct DetailView: View {
-    @Binding var restaurant: Restaurant
+    @ObservedObject var restaurant: Restaurant
     
     var body: some View {
             GeometryReader { metric in
@@ -28,7 +28,7 @@ struct DetailView: View {
                         .padding([.leading, .bottom, .trailing], 15)
                         .padding(.top, 5)
                     //The navigation view containing all restaurant details such as description, story, recipes, and ingredients
-                    RestaurantDetailListView(restaurant: $restaurant)
+                    RestaurantDetailListView(restaurant: restaurant)
 
                 }
             }
@@ -43,7 +43,7 @@ struct BindingViewExamplePreviewContainer_1 : View {
 
 
      var body: some View {
-        DetailView(restaurant: $restaurant)
+        DetailView(restaurant: restaurant)
      }
 }
 
@@ -57,7 +57,7 @@ struct BindingViewExample_1_Previews : PreviewProvider {
 
 //Structure containing restaurant details
 struct RestaurantDetailListView: View {
-    @Binding var restaurant: Restaurant
+    @ObservedObject var restaurant: Restaurant
     var body: some View {
         
             List {
@@ -79,6 +79,9 @@ struct RestaurantDetailListView: View {
                             .font(.subheadline)
                             .padding(8.0)
                     }
+//                    ForEach(restaurant.reviews) {
+//                        ReviewCell(review: $reviews[identifiedBy: $0])
+//                    }
                 }
             }.navigationBarHidden(true)
     }
