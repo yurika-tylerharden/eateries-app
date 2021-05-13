@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Eateries" representedClassName="Eateries" syncable="YES" codeGenerationType="class">
         <attribute name="navigationTitle" optional="YES" attributeType="String"/>
-        <relationship name="restaurant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="eateries" inverseEntity="Restaurant"/>
+        <relationship name="restaurant" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Restaurant" inverseName="eateries" inverseEntity="Restaurant"/>
     </entity>
     <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
         <attribute name="image" attributeType="String" defaultValueString=""/>
@@ -20,6 +20,6 @@
     <elements>
         <element name="Restaurant" positionX="-63" positionY="8" width="128" height="119"/>
         <element name="Review" positionX="146.5" positionY="221" width="128" height="88"/>
-        <element name="Eateries" positionX="-291.5" positionY="-156.5" width="128" height="59"/>
+        <element name="Eateries" positionX="-291.5" positionY="-156.5" width="128" height="73"/>
     </elements>
 </model>

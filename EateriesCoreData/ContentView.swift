@@ -11,13 +11,13 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Restaurant.name, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Eateries.navigationTitle, ascending: true)],
         animation: .default)
-    private var restaurants: FetchedResults<Restaurant>
+    private var eateries: FetchedResults<Eateries>
 
     var body: some View {
         NavigationView {
-            MasterView(restaurants: restaurants)
+            MasterView(eateries: eateries.first ?? Eateries(context: viewContext))
         }
     }
 }
