@@ -170,15 +170,8 @@
 			children = (
 				B3079B20264D64CC00B38A18 /* GeneratedCode */,
 				B3079A64264D315400B38A18 /* EateriesCoreDataApp.swift */,
-				B3079A66264D315400B38A18 /* ContentView.swift */,
-				B3079AE6264D4A5200B38A18 /* Eateries+ViewModel.swift */,
-				B3079B2D264D65B300B38A18 /* Review+ViewModel.swift */,
-				B3079AB7264D3D7100B38A18 /* Restaurant+ViewModel.swift */,
-				B3079B06264D5F2900B38A18 /* EditView.swift */,
-				B3079ABF264D41C400B38A18 /* MasterView.swift */,
-				B3079AFE264D5EFF00B38A18 /* Detail+EditViewRouter.swift */,
-				B3079AF6264D5B9300B38A18 /* DetailView.swift */,
-				B3079AEE264D567F00B38A18 /* RowView.swift */,
+				B3079B50264D6A8D00B38A18 /* Views */,
+				B3079B49264D6A7500B38A18 /* ViewModels */,
 				B3079A68264D315500B38A18 /* Assets.xcassets */,
 				B3079A6D264D315500B38A18 /* Persistence.swift */,
 				B3079A72264D315500B38A18 /* Info.plist */,
@@ -225,6 +218,29 @@
 				B3079B26264D64CC00B38A18 /* Review+CoreDataProperties.swift */,
 			);
 			path = GeneratedCode;
+			sourceTree = "<group>";
+		};
+		B3079B49264D6A7500B38A18 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B3079AE6264D4A5200B38A18 /* Eateries+ViewModel.swift */,
+				B3079B2D264D65B300B38A18 /* Review+ViewModel.swift */,
+				B3079AB7264D3D7100B38A18 /* Restaurant+ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B3079B50264D6A8D00B38A18 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3079A66264D315400B38A18 /* ContentView.swift */,
+				B3079B06264D5F2900B38A18 /* EditView.swift */,
+				B3079ABF264D41C400B38A18 /* MasterView.swift */,
+				B3079AFE264D5EFF00B38A18 /* Detail+EditViewRouter.swift */,
+				B3079AF6264D5B9300B38A18 /* DetailView.swift */,
+				B3079AEE264D567F00B38A18 /* RowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B3688B8826410695006A8EF9 /* Detail Views */ = {

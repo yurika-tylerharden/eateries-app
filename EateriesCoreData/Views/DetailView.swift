@@ -54,16 +54,27 @@ struct RestaurantDetailListView: View {
                         .font(.subheadline)
                         .padding(8.0)
                 }
-//                Section(header: Text("Reviews")) {
-//                    ForEach(restaurant.reviews, id: \.self) { review in
-//                        Text(review)
-//                            .font(.subheadline)
-//                            .padding(8.0)
-//                    }
-//                    ForEach(restaurant.reviews) {
-//                        ReviewCell(review: $reviews[identifiedBy: $0])
-//                    }
+                Section(header: Text("Reviews")) {
+                    ForEach(restaurant.reviewArray) { review in
+                        ReviewRowDetailView(review: review)
+                    }
             }.navigationBarHidden(true)
+        }
+    }
+}
+
+struct ReviewRowDetailView: View {
+    @ObservedObject var review: Review
+    var body: some View {
+
+        VStack {
+            //image of food converted from imageURL
+            Text(review.reviewerString)
+                .foregroundColor(.pink)
+            Text(review.commentString)
+                .font(.subheadline)
+                .italic()
+        }
     }
 }
 
