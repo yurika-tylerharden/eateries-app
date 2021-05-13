@@ -14,7 +14,7 @@ struct MasterView: View {
         List {
             ForEach(eateries.restaurantArray) { restaurant in
                 NavigationLink(
-                    destination: DetailView(restaurant: restaurant),
+                    destination: RouterView(restaurant: restaurant),
                     label: {
                         RowView(restaurant: restaurant)
                     })

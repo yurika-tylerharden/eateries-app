@@ -10,15 +10,15 @@
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="notes" attributeType="String" defaultValueString=""/>
         <relationship name="eateries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Eateries" inverseName="restaurant" inverseEntity="Eateries"/>
-        <relationship name="review" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="restaurant" inverseEntity="Review"/>
+        <relationship name="review" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Review" inverseName="restaurant" inverseEntity="Review"/>
     </entity>
     <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
-        <attribute name="comment" optional="YES" attributeType="String"/>
-        <attribute name="reviewer" optional="YES" attributeType="String"/>
+        <attribute name="comment" attributeType="String" defaultValueString=""/>
+        <attribute name="reviewer" attributeType="String" defaultValueString=""/>
         <relationship name="restaurant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="review" inverseEntity="Restaurant"/>
     </entity>
     <elements>
-        <element name="Restaurant" positionX="-63" positionY="8" width="128" height="119"/>
+        <element name="Restaurant" positionX="-63" positionY="8" width="128" height="133"/>
         <element name="Review" positionX="146.5" positionY="221" width="128" height="88"/>
         <element name="Eateries" positionX="-291.5" positionY="-156.5" width="128" height="73"/>
     </elements>

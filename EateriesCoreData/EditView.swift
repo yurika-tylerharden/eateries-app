@@ -54,29 +54,24 @@ struct EditRestaurantDetailListView: View {
                         .font(.subheadline)
                         .padding(8.0)
                 }.padding(8.0)
-                Section(header: HStack {
-                    Text("Reviews")
-                    Button(action: AddReview) {
-                        Image(systemName: "plus").foregroundColor(.pink)
-                    }
-
-                }) {
-                    ForEach(restaurant.reviews.indices, id: \.self) { review in
-                        TextEditor(text: $restaurant.reviews[review])
-                            .font(.subheadline)
-                            .padding(8.0)
-                    }
-                }.padding(8.0)
+//                Section(header: HStack {
+//                    Text("Reviews")
+//                    Button(action: {
+//                        withAnimation {
+//                            restaurant.addItem()
+//                        }
+//                    }) {
+//                        Label("", systemImage: "plus")
+//                    }
+//                }) {
+//                    ForEach(restaurant.reviewArray) { review in
+//                        ReviewRowView(review: review)
+//                    }
+//                }.padding(8.0)
             }.navigationBarHidden(true)
             
     }
-//    private func onDelete(offsets: IndexSet) {
-//        restaurant.reviews.remove(atOffsets: offsets)
-//    }
-//
-//    private func AddReview() {
-//        restaurant.reviews.append(contentsOf: ["Add review"])
-//    }
+
 }
 
 
