@@ -11,7 +11,26 @@ struct RowView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var restaurant: Restaurant
     var body: some View {
-        Text(restaurant.nameString)
+
+        HStack {
+            //image of food converted from imageURL
+            Image(uiImage: restaurant.imageURL)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 70, height: 70)
+                .clipped()
+                .padding(5)
+                               
+            //name and description of food
+            VStack(alignment: .leading) {
+                Text(restaurant.nameString)
+                    .foregroundColor(.pink)
+                Text(restaurant.locationString)
+                    .font(.subheadline)
+                    .italic()
+            }
+        }
+            
     }
 }
 
