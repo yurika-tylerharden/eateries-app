@@ -20,7 +20,7 @@ extension Eateries {
     func addItem() {
         let newRestaurant = Restaurant(context: viewContext)
         newRestaurant.name = "New restaurant"
-
+        addToRestaurant(newRestaurant)
         do {
             try viewContext.save()
         } catch {

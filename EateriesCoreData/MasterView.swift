@@ -15,8 +15,14 @@ struct MasterView: View {
             ForEach(eateries.restaurantArray) { restaurant in
                 Text(restaurant.nameString)
             }
-            .onDelete(perform: eateries.deleteItems)
-        }.navigationBarItems(leading: EditButton(), trailing: Button(action: eateries.addItem) {
+            .onDelete { offsets in
+                withAnimation { eateries.deleteItems(offsets: offsets) }
+            }
+        }.navigationBarItems(leading: EditButton(), trailing: Button(action: {
+            withAnimation {
+                eateries.addItem()
+            }
+        }) {
             Label("", systemImage: "plus")
         })
     }
@@ -28,3 +34,4 @@ struct MasterView: View {
 //        MasterView(restaurants:restaurants)
 //    }
 //}
+
