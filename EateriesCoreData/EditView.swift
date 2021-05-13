@@ -54,24 +54,38 @@ struct EditRestaurantDetailListView: View {
                         .font(.subheadline)
                         .padding(8.0)
                 }.padding(8.0)
-//                Section(header: HStack {
-//                    Text("Reviews")
-//                    Button(action: {
-//                        withAnimation {
-//                            restaurant.addItem()
-//                        }
-//                    }) {
-//                        Label("", systemImage: "plus")
-//                    }
-//                }) {
-//                    ForEach(restaurant.reviewArray) { review in
-//                        ReviewRowView(review: review)
-//                    }
-//                }.padding(8.0)
+                Section(header: HStack {
+                    Text("Reviews")
+                    Button(action: {
+                        withAnimation {
+                            restaurant.addItem()
+                        }
+                    }) {
+                        Label("", systemImage: "plus").foregroundColor(.pink)
+                    }
+                }) {
+                    ForEach(restaurant.reviewArray) { review in
+                        ReviewRowEditView(review: review)
+                    }
+                }.padding(8.0)
             }.navigationBarHidden(true)
-            
     }
 
+}
+
+struct ReviewRowEditView: View {
+    @ObservedObject var review: Review
+    var body: some View {
+        VStack {
+            //image of food converted from imageURL
+            TextEditor(text: $review.reviewerString)
+                .font(.subheadline)
+                .padding(8.0)
+            TextEditor(text: $review.commentString)
+                .font(.subheadline)
+                .padding(8.0)
+        }
+    }
 }
 
 
