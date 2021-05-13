@@ -76,6 +76,12 @@
 		B3079A82264D315600B38A18 /* EateriesCoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EateriesCoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3079A86264D315600B38A18 /* EateriesCoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesCoreDataUITests.swift; sourceTree = "<group>"; };
 		B3079A88264D315600B38A18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3079AAB264D373500B38A18 /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3079AAC264D373500B38A18 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3079AAD264D373500B38A18 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3079AAE264D373500B38A18 /* Eateries+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eateries+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3079AAF264D373500B38A18 /* Eateries+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eateries+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3079AB0264D373500B38A18 /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3688B672640FE23006A8EF9 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		B3688B6F2640FF79006A8EF9 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 		B3688B742640FF9D006A8EF9 /* RestaurantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellView.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 		B3079A63264D315400B38A18 /* EateriesCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				B3079AAA264D373500B38A18 /* GeneratedCode */,
 				B3079A64264D315400B38A18 /* EateriesCoreDataApp.swift */,
 				B3079A66264D315400B38A18 /* ContentView.swift */,
 				B3079A68264D315500B38A18 /* Assets.xcassets */,
@@ -181,6 +188,19 @@
 				B3079A88264D315600B38A18 /* Info.plist */,
 			);
 			path = EateriesCoreDataUITests;
+			sourceTree = "<group>";
+		};
+		B3079AAA264D373500B38A18 /* GeneratedCode */ = {
+			isa = PBXGroup;
+			children = (
+				B3079AAB264D373500B38A18 /* Review+CoreDataClass.swift */,
+				B3079AAC264D373500B38A18 /* Restaurant+CoreDataProperties.swift */,
+				B3079AAD264D373500B38A18 /* Restaurant+CoreDataClass.swift */,
+				B3079AAE264D373500B38A18 /* Eateries+CoreDataClass.swift */,
+				B3079AAF264D373500B38A18 /* Eateries+CoreDataProperties.swift */,
+				B3079AB0264D373500B38A18 /* Review+CoreDataProperties.swift */,
+			);
+			path = GeneratedCode;
 			sourceTree = "<group>";
 		};
 		B3688B8826410695006A8EF9 /* Detail Views */ = {
