@@ -13,7 +13,11 @@ struct MasterView: View {
     var body: some View {
         List {
             ForEach(eateries.restaurantArray) { restaurant in
-                Text(restaurant.nameString)
+                NavigationLink(
+                    destination: DetailView(restaurant: restaurant),
+                    label: {
+                        RowView(restaurant: restaurant)
+                    })
             }
             .onDelete { offsets in
                 withAnimation { eateries.deleteItems(offsets: offsets) }
@@ -34,4 +38,3 @@ struct MasterView: View {
 //        MasterView(restaurants:restaurants)
 //    }
 //}
-
