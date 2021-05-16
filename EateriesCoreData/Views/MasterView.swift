@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct MasterView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var eateries: Eateries
+    @Environment(\.editMode) var mode
+    
     var body: some View {
         VStack {
+            TitleEditor(eateries: eateries)
             List {
                 ForEach(eateries.restaurantArray) { restaurant in
                     NavigationLink(
@@ -28,11 +30,26 @@ struct MasterView: View {
                     eateries.save()
                 }
             }.navigationBarItems(leading: EditButton(), trailing: Button(action: {
-                withAnimation { eateries.addItem() }
-            }) { Label("", systemImage: "plus")
+                withAnimation { eateries.addItem() } }) { Label("", systemImage: "plus")
             })
-            .navigationBarTitle(Text("The Best Eateries"))
             .listStyle(InsetGroupedListStyle())
+        }.navigationBarTitle(self.mode?.wrappedValue == .active ? Text("") : Text(eateries.navigationTitleString) )
+    }
+}
+struct TitleEditor: View {
+    @Environment(\.editMode) var mode
+    @ObservedObject var eateries: Eateries
+
+    var body: some View {
+        if self.mode?.wrappedValue.isEditing ?? true {
+            HStack {
+                Text("Enter title:")
+                    .padding(.leading, 16)
+                TextField("Enter title here", text: $eateries.navigationTitleString)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }.onDisappear {
+                eateries.save()
+            }
         }
     }
 }

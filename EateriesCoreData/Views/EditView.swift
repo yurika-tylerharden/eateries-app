@@ -58,8 +58,6 @@ struct EditRestaurantDetailListView: View {
                 withAnimation { restaurant.deleteItems(offsets: offsets) }
             }
             .onMove { (indices, destination) in
-//                        restaurant.reviewArray.move(fromOffsets: $0, toOffset: $1)
-//                        restaurant.moveItems(projects: $restaurant, set: $0, to: $1)
                 restaurant.reviewArray.move(fromOffsets: indices, toOffset: destination)
                 restaurant.save()
             }

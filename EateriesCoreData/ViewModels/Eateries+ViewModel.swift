@@ -9,6 +9,10 @@ import Foundation
 import CoreData
 
 extension Eateries {
+    var navigationTitleString: String {
+        get { navigationTitle ?? "" }
+        set { navigationTitle = newValue}
+    }
     var restaurantArray: [Restaurant] {
         // ViewModel computed property that returns restaurants as array
         get { restaurant?.array as? [Restaurant] ?? []}
