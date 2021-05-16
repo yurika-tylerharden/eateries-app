@@ -56,7 +56,8 @@ extension Restaurant {
     }
     func addItem() {
         let newReview = Review(context: viewContext)
-        newReview.reviewer = "New review"
+        newReview.reviewer = "Enter name"
+        newReview.comment = "Enter comment"
         addToReview(newReview)
         do {
             try viewContext.save()
@@ -67,7 +68,11 @@ extension Restaurant {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-
+//    func moveItems(review: [Restaurant], set: IndexSet, to: Int) {
+////        reveview.move(viewContext: viewContext, set: $0, to: $1)
+////        offsets.map { reviewArray[$0] }.
+//        
+//    }
     func deleteItems(offsets: IndexSet) {
         offsets.map { reviewArray[$0] }.forEach(viewContext.delete)
 

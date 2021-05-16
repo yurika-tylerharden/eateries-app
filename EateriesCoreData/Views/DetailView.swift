@@ -8,31 +8,26 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var restaurant: Restaurant
     
     var body: some View {
-            GeometryReader { metric in
-                VStack() {
-                    //image from URL
-                    Image(uiImage: restaurant.imageURL)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: metric.size.height * 0.4, height: metric.size.height * 0.4)
-                        .clipped()
-                        .scaledToFit()
-                        .padding([.leading, .bottom, .trailing], 30)
-                        .animation(.easeInOut)
-                    Text(restaurant.nameString)
-                        .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                        .padding([.leading, .bottom, .trailing], 15)
-                        .padding(.top, 5)
-                    //The navigation view containing all restaurant details such as description, story, recipes, and ingredients
-                    RestaurantDetailListView(restaurant: restaurant)
-
-                }
+            VStack() {
+                //image from URL
+                Image(uiImage: restaurant.imageURL)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 7)
+                    .padding(20)
+                    .animation(.easeInOut)
+                Text(restaurant.nameString)
+                    .font(.largeTitle)
+                    .padding([.leading, .bottom, .trailing], 15)
+                    .padding(.top, 5)
             }
-        
+            //The navigation view containing all restaurant details such as description, story, recipes, and ingredients
+            RestaurantDetailListView(restaurant: restaurant)
     }
 }
 
@@ -40,33 +35,29 @@ struct DetailView: View {
 struct RestaurantDetailListView: View {
     @ObservedObject var restaurant: Restaurant
     var body: some View {
-        
-            List {
-                Section(header: Text("Location")) {
-                    Text(restaurant.locationString)
-                        .font(.callout)
-                        .foregroundColor(Color.gray)
-                        .italic()
-                        .padding(8.0)
-                }
-                Section(header: Text("Notes")) {
-                    Text(restaurant.notesString)
-                        .font(.subheadline)
-                        .padding(8.0)
-                }
-                Section(header: Text("Reviews")) {
-                    ForEach(restaurant.reviewArray) { review in
-                        ReviewRowDetailView(review: review)
-                    }
-            }.navigationBarHidden(true)
-        }
+        Section(header: Text("Location")) {
+            Text(restaurant.locationString)
+                .font(.callout)
+                .foregroundColor(Color.gray)
+                .italic()
+                .padding(8.0)
+        }.padding(8.0)
+        Section(header: Text("Notes")) {
+            Text(restaurant.notesString)
+                .font(.subheadline)
+                .padding(8.0)
+        }.padding(8.0)
+        Section(header: Text("Reviews")) {
+            ForEach(restaurant.reviewArray) { review in
+                ReviewRowDetailView(review: review)
+            }
+        }.padding(8.0)
     }
 }
 
 struct ReviewRowDetailView: View {
     @ObservedObject var review: Review
     var body: some View {
-
         VStack {
             //image of food converted from imageURL
             Text(review.reviewerString)
@@ -74,24 +65,7 @@ struct ReviewRowDetailView: View {
             Text(review.commentString)
                 .font(.subheadline)
                 .italic()
+                .padding(.leading, 30)
         }
     }
 }
-
-//struct BindingViewExamplePreviewContainer_1 : View {
-//    @State var restaurant = restaurants[3]
-//
-//
-//     var body: some View {
-//        DetailView(restaurant: restaurant)
-//     }
-//}
-
-//#if DEBUG
-//struct BindingViewExample_1_Previews : PreviewProvider {
-//    static var previews: some View {
-//        BindingViewExamplePreviewContainer_1()
-//    }
-//}
-//#endif
-

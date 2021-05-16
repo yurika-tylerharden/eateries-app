@@ -11,29 +11,29 @@ struct MasterView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var eateries: Eateries
     var body: some View {
-        List {
-            ForEach(eateries.restaurantArray) { restaurant in
-                NavigationLink(
-                    destination: RouterView(restaurant: restaurant),
-                    label: {
-                        RowView(restaurant: restaurant)
-                    })
-            }
-            .onDelete { offsets in
-                withAnimation { eateries.deleteItems(offsets: offsets) }
-            }
-            .onMove {
-                eateries.restaurantArray.move(fromOffsets: $0, toOffset: $1)
-                eateries.save() 
-            }
-        }.navigationBarItems(leading: EditButton(), trailing: Button(action: {
-            withAnimation {
-                eateries.addItem()
-            }
-        }) {
-            Label("", systemImage: "plus")
-        })
-        .navigationBarTitle(Text("The Best Eateries"))
+        VStack {
+            List {
+                ForEach(eateries.restaurantArray) { restaurant in
+                    NavigationLink(
+                        destination: RouterView(restaurant: restaurant),
+                        label: {
+                            RowView(restaurant: restaurant)
+                        })
+                }
+                .onDelete { offsets in
+                    withAnimation { eateries.deleteItems(offsets: offsets) }
+                }
+                .onMove {
+                    eateries.restaurantArray.move(fromOffsets: $0, toOffset: $1)
+                    eateries.save()
+                }
+            }.navigationBarItems(leading: EditButton(), trailing: Button(action: {
+                withAnimation { eateries.addItem() }
+            }) { Label("", systemImage: "plus")
+            })
+            .navigationBarTitle(Text("The Best Eateries"))
+            .listStyle(InsetGroupedListStyle())
+        }
     }
 }
 

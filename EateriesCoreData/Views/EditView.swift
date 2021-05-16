@@ -9,9 +9,8 @@ import SwiftUI
 
 struct EditView: View {
     @ObservedObject var restaurant: Restaurant
-    @Environment(\.editMode) var mode
+    
     var body: some View {
-        VStack() {
             HStack {
                 Text("Restaurant Name:")
                     .padding(.leading, 16)
@@ -28,47 +27,43 @@ struct EditView: View {
             }
             //Navigation view containing list of the relevant information about selected food, divided into sections
             EditRestaurantDetailListView(restaurant: restaurant)
-        }
-//        .onDisappear {
-//            EateriesApp.save()
-//        }
     }
 }
 
 struct EditRestaurantDetailListView: View {
     @ObservedObject var restaurant: Restaurant
-    @Environment(\.editMode) var mode
     
     var body: some View {
-
-            List {
-                Section(header: Text("Location")) {
-                    
-                    TextEditor(text: $restaurant.locationString)
-                        .font(.callout)
-                        .foregroundColor(Color.gray)
-                        .padding(8.0)
-                }.padding(8.0)
-                Section(header: Text("Notes")) {
-                    TextEditor(text: $restaurant.notesString)
-                        .font(.subheadline)
-                        .padding(8.0)
-                }.padding(8.0)
-                Section(header: HStack {
-                    Text("Reviews")
-                    Button(action: {
-                        withAnimation {
-                            restaurant.addItem()
-                        }
-                    }) {
-                        Label("", systemImage: "plus").foregroundColor(.pink)
-                    }
-                }) {
-                    ForEach(restaurant.reviewArray) { review in
-                        ReviewRowEditView(review: review)
-                    }
-                }.padding(8.0)
-            }.navigationBarHidden(true)
+        Section(header: Text("Location")) {
+            TextEditor(text: $restaurant.locationString)
+                .font(.callout)
+                .foregroundColor(Color.gray)
+                .padding(8.0)
+        }
+        Section(header: Text("Notes")) {
+            TextEditor(text: $restaurant.notesString)
+                .font(.subheadline)
+                .padding(8.0)
+        }
+        Section(header: HStack {
+            Text("Reviews")
+            Button(action: {
+                withAnimation { restaurant.addItem() }
+            }) { Label("", systemImage: "plus").foregroundColor(.pink) }
+            }) {
+            ForEach(restaurant.reviewArray) { review in
+                ReviewRowEditView(review: review)
+            }
+            .onDelete { offsets in
+                withAnimation { restaurant.deleteItems(offsets: offsets) }
+            }
+            .onMove { (indices, destination) in
+//                        restaurant.reviewArray.move(fromOffsets: $0, toOffset: $1)
+//                        restaurant.moveItems(projects: $restaurant, set: $0, to: $1)
+                restaurant.reviewArray.move(fromOffsets: indices, toOffset: destination)
+                restaurant.save()
+            }
+        }.padding(8.0)
     }
 
 }
@@ -79,11 +74,10 @@ struct ReviewRowEditView: View {
         VStack {
             //image of food converted from imageURL
             TextEditor(text: $review.reviewerString)
-                .font(.subheadline)
-                .padding(8.0)
+                .foregroundColor(.pink)
             TextEditor(text: $review.commentString)
                 .font(.subheadline)
-                .padding(8.0)
+                .padding(.leading, 30)
         }
     }
 }

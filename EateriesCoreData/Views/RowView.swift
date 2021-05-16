@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RowView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var restaurant: Restaurant
     var body: some View {
 
@@ -18,8 +17,9 @@ struct RowView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 70, height: 70)
-                .clipped()
-                .padding(5)
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                .shadow(radius: 3)
+                .padding(10)
                                
             //name and description of food
             VStack(alignment: .leading) {
@@ -27,15 +27,10 @@ struct RowView: View {
                     .foregroundColor(.pink)
                 Text(restaurant.locationString)
                     .font(.subheadline)
+                    .foregroundColor(Color.gray)
                     .italic()
             }
         }
             
     }
 }
-
-//struct RowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RowView()
-//    }
-//}
