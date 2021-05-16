@@ -22,6 +22,10 @@ struct MasterView: View {
             .onDelete { offsets in
                 withAnimation { eateries.deleteItems(offsets: offsets) }
             }
+            .onMove {
+                eateries.restaurantArray.move(fromOffsets: $0, toOffset: $1)
+                eateries.save() 
+            }
         }.navigationBarItems(leading: EditButton(), trailing: Button(action: {
             withAnimation {
                 eateries.addItem()
@@ -29,6 +33,7 @@ struct MasterView: View {
         }) {
             Label("", systemImage: "plus")
         })
+        .navigationBarTitle(Text("The Best Eateries"))
     }
 }
 
