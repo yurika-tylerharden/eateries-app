@@ -40,12 +40,12 @@ class Eateries: ObservableObject, Decodable, Encodable, Identifiable  {
 class Restaurant: ObservableObject, Decodable, Encodable, Identifiable {
 //    public var id = UUID()
     @Published public var name: String
-    @Published public var location: String
+    @Published public var location: Location
     @Published public var notes: String
     @Published public var image: String
     @Published public var review: [Review]
     
-    init(name: String, location: String, notes: String, image: String, review: [Review]) {
+    init(name: String, location: Location, notes: String, image: String, review: [Review]) {
         self.name = name
         self.location = location
         self.notes = notes
@@ -64,7 +64,7 @@ class Restaurant: ObservableObject, Decodable, Encodable, Identifiable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
-        location = try container.decode(String.self, forKey: .location)
+        location = try container.decode(Location.self, forKey: .location)
         notes = try container.decode(String.self, forKey: .notes)
         image = try container.decode(String.self, forKey: .image)
         review = try container.decode(Array.self, forKey: .review)
@@ -77,6 +77,11 @@ class Restaurant: ObservableObject, Decodable, Encodable, Identifiable {
         try container.encode(notes, forKey: .notes)
         try container.encode(image, forKey: .image)
         try container.encode(review, forKey: .review)
+    }
+    public struct Location: Decodable, Encodable {
+        var name: String
+        var latitude: Double
+        var longitude: Double
     }
     
 }
@@ -108,43 +113,4 @@ class Review: ObservableObject, Decodable, Encodable, Identifiable {
     }
 }
 
-//struct Restaurant: Hashable, Codable, Identifiable   {
-//    public var id = UUID()
-//
-//    var name: String
-//    var location: String
-//    var notes: String
-//    var image: String
-//    var reviews: Array<String>
-//
-//    //will return UIImage from a URL string
-//    var imageURL: UIImage {
-//        let emptyImage = UIImage(named: "placeholder")!
-//        if image == "" {
-//            return emptyImage
-//
-//        }
-//        guard let url = URL(string: image) else {
-//            return emptyImage
-//        }
-//        guard let data = try? Data(contentsOf: url) else {
-//            return emptyImage
-//        }
-//        guard let uiImage = UIImage(data: data) else {
-//            return UIImage()
-//        }
-//        return uiImage
-//    }
-//}
-//
-//extension Binding where Value: MutableCollection, Value.Element: Identifiable {
-//    /// Subscript for a given, identifiable element
-//    subscript(identifiedBy element: Value.Element) -> Binding<Value.Element> {
-//        return Binding<Value.Element>(get: {
-//            return wrappedValue.first { $0.id == element.id } ?? element
-//        }, set: { newValue in
-//            guard let i = wrappedValue.firstIndex(where: { $0.id == element.id }) else { return }
-//            wrappedValue[i] = newValue
-//        })
-//    }
-//}
+

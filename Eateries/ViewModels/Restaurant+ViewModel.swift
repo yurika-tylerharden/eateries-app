@@ -15,10 +15,10 @@ extension Restaurant {
         get { name as String}
         set { name = newValue}
     }
-    var locationString: String {
-        get { location as String }
-        set { location = newValue}
-    }
+//    var locationString: String {
+//        get { location as String }
+//        set { location = newValue}
+//    }
     var notesString: String {
         get { notes as String }
         set { notes = newValue}

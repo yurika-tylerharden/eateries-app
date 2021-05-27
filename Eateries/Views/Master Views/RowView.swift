@@ -25,7 +25,7 @@ struct RowView: View {
             VStack(alignment: .leading) {
                 Text(restaurant.nameString)
                     .foregroundColor(.pink)
-                Text(restaurant.locationString)
+                Text(restaurant.location.name)
                     .font(.subheadline)
                     .foregroundColor(Color.gray)
                     .italic()

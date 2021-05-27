@@ -35,7 +35,7 @@ struct EditRestaurantDetailListView: View {
     
     var body: some View {
         Section(header: Text("Location")) {
-            TextEditor(text: $restaurant.locationString)
+            TextEditor(text: $restaurant.location.name)
                 .font(.callout)
                 .foregroundColor(Color.gray)
                 .padding(8.0)

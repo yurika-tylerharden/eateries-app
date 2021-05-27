@@ -39,7 +39,7 @@ struct RestaurantDetailListView: View {
     @ObservedObject var restaurant: Restaurant
     var body: some View {
         Section(header: Text("Location")) {
-            Text(restaurant.locationString)
+            Text(restaurant.location.name)
                 .font(.callout)
                 .foregroundColor(Color.gray)
                 .italic()
