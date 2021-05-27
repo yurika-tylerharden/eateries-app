@@ -8,13 +8,13 @@
 import SwiftUI
 //This structure defines the master view of the app containing a list of recipes
 struct ContentView: View {
-    @Binding var restaurants: [Restaurant]
+    @ObservedObject var eateries: Eateries
 
     var body: some View {
         //place NavigationView inside the body
         NavigationView {
             //List inside NavigationView
-            RestaurantListView(restaurants: $restaurants)
+            MasterView(eateries: eateries)
         }
         //Fixes issues with navigation view on iPad and larger devices
         .navigationViewStyle(StackNavigationViewStyle())

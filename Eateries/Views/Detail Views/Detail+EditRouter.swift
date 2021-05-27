@@ -8,13 +8,13 @@
 import SwiftUI
 
 //Structure defining the detail view for selected food. If in edit mode it will route user to edit page
-struct RestaurantDetail: View {
+struct RouterView: View {
     @ObservedObject var restaurant: Restaurant
     @Environment(\.editMode) var mode
     
     var body: some View {
         //if in edit move go to edit page
-        NavigationView {
+        List {
             if mode?.wrappedValue == .inactive {
                 DetailView(restaurant: restaurant)
                     .animation(.easeInOut)
@@ -23,10 +23,12 @@ struct RestaurantDetail: View {
             else {
                 EditView(restaurant: restaurant)
                     .transition(.move(edge: .bottom))
+                    .onDisappear {
+                        restaurant.save()
+                    }
             }
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
         .navigationBarItems(trailing: EditButton())
     }
-
 }
 

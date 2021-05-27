@@ -7,23 +7,50 @@
 
 import Foundation
 import SwiftUI
-//import Combine
-//import UIKit
+import Combine
+import UIKit
+
+class Eateries: ObservableObject, Decodable, Encodable, Identifiable  {
+    @Published public var restaurant: [Restaurant]
+    @Published public var navigationTitleString: String
+    init(restaurant: [Restaurant], navigationTitleString: String) {
+        self.restaurant = restaurant
+        self.navigationTitleString = navigationTitleString
+    }
+    
+    enum CodingKeys: String, CodingKey, RawRepresentable {
+        case restaurant
+        case navigationTitleString
+        
+    }
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        restaurant = try container.decode(Array.self, forKey: .restaurant)
+        navigationTitleString = try container.decode(String.self, forKey: .navigationTitleString)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(restaurant, forKey: .restaurant)
+        try container.encode(navigationTitleString, forKey: .navigationTitleString)
+
+    }
+}
 
 class Restaurant: ObservableObject, Decodable, Encodable, Identifiable {
 //    public var id = UUID()
-    @Published var name: String
-    @Published var location: String
-    @Published var notes: String
-    @Published var image: String
-    @Published var reviews: Array<String>
+    @Published public var name: String
+    @Published public var location: String
+    @Published public var notes: String
+    @Published public var image: String
+    @Published public var review: [Review]
     
-    init(name: String, location: String, notes: String, image: String, reviews: Array<String>) {
+    init(name: String, location: String, notes: String, image: String, review: [Review]) {
         self.name = name
         self.location = location
         self.notes = notes
         self.image = image
-        self.reviews = reviews
+        self.review = review
     }
 
     enum CodingKeys: String, CodingKey, RawRepresentable {
@@ -31,7 +58,7 @@ class Restaurant: ObservableObject, Decodable, Encodable, Identifiable {
         case location
         case notes
         case image
-        case reviews
+        case review
     }
 
     required init(from decoder: Decoder) throws {
@@ -40,7 +67,7 @@ class Restaurant: ObservableObject, Decodable, Encodable, Identifiable {
         location = try container.decode(String.self, forKey: .location)
         notes = try container.decode(String.self, forKey: .notes)
         image = try container.decode(String.self, forKey: .image)
-        reviews = try container.decode(Array.self, forKey: .reviews)
+        review = try container.decode(Array.self, forKey: .review)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -49,24 +76,35 @@ class Restaurant: ObservableObject, Decodable, Encodable, Identifiable {
         try container.encode(location, forKey: .location)
         try container.encode(notes, forKey: .notes)
         try container.encode(image, forKey: .image)
-        try container.encode(reviews, forKey: .reviews)
+        try container.encode(review, forKey: .review)
     }
-    var imageURL: UIImage {
-        let emptyImage = UIImage(named: "placeholder")!
-        if image == "" {
-            return emptyImage
+    
+}
 
-        }
-        guard let url = URL(string: image) else {
-            return emptyImage
-        }
-        guard let data = try? Data(contentsOf: url) else {
-            return emptyImage
-        }
-        guard let uiImage = UIImage(data: data) else {
-            return UIImage()
-        }
-        return uiImage
+class Review: ObservableObject, Decodable, Encodable, Identifiable {
+    @Published public var reviewer: String
+    @Published public var comment: String
+    
+    init(reviewer: String, comment: String) {
+        self.reviewer = reviewer
+        self.comment = comment
+    }
+
+    enum CodingKeys: String, CodingKey, RawRepresentable {
+        case reviewer
+        case comment
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        reviewer = try container.decode(String.self, forKey: .reviewer)
+        comment = try container.decode(String.self, forKey: .comment)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(reviewer, forKey: .reviewer)
+        try container.encode(comment, forKey: .comment)
     }
 }
 
