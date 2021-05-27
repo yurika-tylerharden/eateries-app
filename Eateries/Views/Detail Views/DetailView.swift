@@ -39,11 +39,12 @@ struct RestaurantDetailListView: View {
     @ObservedObject var restaurant: Restaurant
     var body: some View {
         Section(header: Text("Location")) {
-            Text(restaurant.location.name)
-                .font(.callout)
-                .foregroundColor(Color.gray)
-                .italic()
-                .padding(8.0)
+            NavigationLink(
+                destination: LocationView(location: LocationViewModel(name: restaurant.location.name, latitude: restaurant.location.latitude, longitude: restaurant.location.longitude)),
+                label: {
+                    Text(restaurant.location.name)
+                }
+            )
         }.padding(8.0)
         Section(header: Text("Notes")) {
             Text(restaurant.notesString)

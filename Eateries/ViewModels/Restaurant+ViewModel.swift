@@ -57,12 +57,18 @@ extension Restaurant {
         review.append(newReview)
         save()
     }
+    
+    func saveLocation(model: Location) {
+        location = model
+        print(model)
+        save()
+    }
 
     func deleteItems(offsets: IndexSet) {
         review.remove(atOffsets: offsets)
         save()
     }
-    
+ 
     func save() {
         EateriesApp.save()
     }

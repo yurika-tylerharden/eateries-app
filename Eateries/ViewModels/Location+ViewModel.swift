@@ -32,3 +32,13 @@ class LocationViewModel: NSObject, ObservableObject {
         }
     }
 }
+
+extension LocationViewModel {
+    func save() {
+        let newData = Restaurant.Location(name: model.name, latitude: model.latitude, longitude: model.longitude)
+        print(newData)
+        model = newData
+        print(model)
+        EateriesApp.save()
+    }
+}

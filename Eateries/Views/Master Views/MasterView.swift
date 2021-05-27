@@ -20,7 +20,8 @@ struct MasterView: View {
                         destination: RouterView(restaurant: restaurant),
                         label: {
                             RowView(restaurant: restaurant)
-                        })
+                        }
+                    )
                 }
                 .onDelete { offsets in
                     withAnimation { eateries.restaurant.remove(atOffsets: offsets) }
