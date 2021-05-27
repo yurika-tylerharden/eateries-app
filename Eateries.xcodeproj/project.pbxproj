@@ -30,6 +30,7 @@
 		B323CA47265FCF04004C5E5A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B323CA46265FCF04004C5E5A /* CoreLocation.framework */; };
 		B323CA49265FCF0B004C5E5A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B323CA48265FCF0B004C5E5A /* MapKit.framework */; };
 		B323CA4B265FCF2D004C5E5A /* Location+ViewModel+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323CA4A265FCF2D004C5E5A /* Location+ViewModel+MapKit.swift */; };
+		B323CA59265FD216004C5E5A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323CA58265FD216004C5E5A /* MapView.swift */; };
 		B3688B682640FE23006A8EF9 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B672640FE23006A8EF9 /* RestaurantModel.swift */; };
 		B3688B702640FF79006A8EF9 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B6F2640FF79006A8EF9 /* MasterView.swift */; };
 		B3688B752640FF9D006A8EF9 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3688B742640FF9D006A8EF9 /* RowView.swift */; };
@@ -112,6 +113,7 @@
 		B323CA46265FCF04004C5E5A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B323CA48265FCF0B004C5E5A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B323CA4A265FCF2D004C5E5A /* Location+ViewModel+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+ViewModel+MapKit.swift"; sourceTree = "<group>"; };
+		B323CA58265FD216004C5E5A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B3688B672640FE23006A8EF9 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		B3688B6F2640FF79006A8EF9 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		B3688B742640FF9D006A8EF9 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			children = (
 				B3688B89264106AD006A8EF9 /* Master Views */,
 				B3688B8826410695006A8EF9 /* Detail Views */,
+				B323CA58265FD216004C5E5A /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				B3688B682640FE23006A8EF9 /* RestaurantModel.swift in Sources */,
 				B3E695C32640FCFE008FCFAC /* ContentView.swift in Sources */,
 				B3E695C12640FCFE008FCFAC /* EateriesApp.swift in Sources */,
+				B323CA59265FD216004C5E5A /* MapView.swift in Sources */,
 				B3688B8426410180006A8EF9 /* EditView.swift in Sources */,
 				B3688B702640FF79006A8EF9 /* MasterView.swift in Sources */,
 				B323C9E2265FB011004C5E5A /* Restaurant+ViewModel.swift in Sources */,
