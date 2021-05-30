@@ -46,7 +46,8 @@ struct ActualTextField: View {
         return TextField(prompt, text: $string, onEditingChanged: {
             editingMode[prompt] = $0
             if !$0 { updateBinding() }
-        }, onCommit: commit).onDisappear {
+        }
+        , onCommit: commit).onDisappear {
             updateBinding()
             editingMode[prompt] = nil
         }

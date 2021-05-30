@@ -15,10 +15,6 @@ extension Restaurant {
         get { name as String}
         set { name = newValue}
     }
-//    var locationString: String {
-//        get { location as String }
-//        set { location = newValue}
-//    }
     var notesString: String {
         get { notes as String }
         set { notes = newValue}
@@ -27,12 +23,10 @@ extension Restaurant {
         get { image as String }
         set { image = newValue}
     }
-    
     var imageURL: UIImage {
         let emptyImage = UIImage(named: "placeholder")!
         if image == "" {
             return emptyImage
-
         }
         guard let url = URL(string: image) else {
             return emptyImage
@@ -45,30 +39,20 @@ extension Restaurant {
         }
         return uiImage
     }
-    
-//    var reviewArray: [Review] {
-//        // ViewModel computed property that returns restaurants as array
-//        get { review }
-//        set { review = review(newValue) }
-//    }
-
     func addItem() {
         let newReview = Review(reviewer: "Enter name", comment: "Enter review")
         review.append(newReview)
         save()
     }
-    
     func saveLocation(model: Location) {
         location = model
         print(model)
         save()
     }
-
     func deleteItems(offsets: IndexSet) {
         review.remove(atOffsets: offsets)
         save()
     }
- 
     func save() {
         EateriesApp.save()
     }

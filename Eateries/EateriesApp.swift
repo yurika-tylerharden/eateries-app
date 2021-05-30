@@ -60,14 +60,22 @@ let restaurantsDefaultData = Eateries(restaurant:[
     ),
     Restaurant(
         name: "Grill'd",
-        location: Restaurant.Location(name: "Brisbane", latitude: 27.023, longitude: 157.26),
+        location: Restaurant.Location(name: "Cairns", latitude: -16.920035500000001, longitude: 145.77566830000001),
         notes: "Burgers, Chips, Salad and Salads at Grill'd",
         image: "https://10619-2.s.cdn12.com/rests/original/107_501922001.jpg",
         review: [Review(reviewer: "Ben", comment: "Good simple menu with real gluten free options, decent coffee, pleasant staff."), Review(reviewer: "Aimee", comment: "I didn't really enjoy food.")]    ),
     Restaurant(
-        name: "Cafe Rossa",
-        location: Restaurant.Location(name: "Brisbane", latitude: 27.023, longitude: 157.26),
+        name: "No Bones",
+        location: Restaurant.Location(name: "Byron Bay", latitude: -28.64450290000002, longitude: 153.61251070000014),
         notes: "Relaxed diner cooking dairy-free vegetarian Asian meals with protein made from soy, wheat and yam.",
         image: "https://b.zmtcdn.com/data/pictures/3/16613723/9b9881e30341b28cff78e66f83acc12f.jpg",
-        review: [Review(reviewer: "Ben", comment: "Good simple menu with real gluten free options, decent coffee, pleasant staff."), Review(reviewer: "Aimee", comment: "I didn't really enjoy food.")]    )
+        review: [Review(reviewer: "Max", comment: "Really enjoyed this place"), Review(reviewer: "Harry", comment: "Pretty cool I guess...")]    )
 ], navigationTitleString: "Favourite Eateries")
+
+let restaurantsPreviewData = [Restaurant(
+    name: "Cafe Rossa",
+    location: Restaurant.Location(name: "Brisbane", latitude: 27.023, longitude: 157.26),
+    notes: "Nice food. Great seating options",
+    image: "https://images.squarespace-cdn.com/content/v1/5335837de4b0e01301bd0a77/1466500309913-2IMOYMJT295EZOLS8R7P/ke17ZwdGBToddI8pDm48kHnZiV9DhmPrl2frxwgbsfZ7gQa3H78H3Y0txjaiv_0fP2mUeL88OWNO9bmLu_elLTohiNOp-605NKAb3xRq45EddH7U3QrYFhnn3EmzEjPHOqpeNLcJ80NK65_fV7S1UQNgGYtJFZIFQfvDrAo3zwDzYrfrn2Ic8weeUsiBd1_fnr1xKjsq_-rO8kOgOtwYvw/custom+cafe+furniture+outdoor+seating+bentwood+and+tables+cafe+rossa+%281%29.jpg?format=2500w",
+    review: [Review(reviewer: "Ben", comment: "Good simple menu with real gluten free options, decent coffee, pleasant staff."), Review(reviewer: "Aimee", comment: "I didn't really enjoy food.")]
+),]

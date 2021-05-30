@@ -11,28 +11,28 @@ struct EditView: View {
     @ObservedObject var restaurant: Restaurant
     
     var body: some View {
-            HStack {
-                Text("Restaurant Name:")
-                    .padding(.leading, 16)
-                TextField("Enter URL", text: $restaurant.nameString)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-            }
-            HStack {
-                Text("Image URL:")
-                    .padding(.leading, 16)
-                TextField("Enter URL", text: $restaurant.imageString)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-            }
-            //Navigation view containing list of the relevant information about selected food, divided into sections
-            EditRestaurantDetailListView(restaurant: restaurant)
+        HStack {
+            Text("Restaurant Name:")
+                .padding(.leading, 16)
+            TextField("Enter URL", text: $restaurant.nameString)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+        }
+        HStack {
+            Text("Image URL:")
+                .padding(.leading, 16)
+            TextField("Enter URL", text: $restaurant.imageString)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+        }
+        //Navigation view containing list of the relevant information about selected food, divided into sections
+        EditRestaurantDetailListView().environmentObject(restaurant)
     }
 }
 
 struct EditRestaurantDetailListView: View {
-    @ObservedObject var restaurant: Restaurant
-    
+    @EnvironmentObject var restaurant: Restaurant
+
     var body: some View {
         Section(header: Text("Location")) {
             TextEditor(text: $restaurant.location.name)
@@ -69,13 +69,21 @@ struct EditRestaurantDetailListView: View {
 struct ReviewRowEditView: View {
     @ObservedObject var review: Review
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             //image of food converted from imageURL
             TextEditor(text: $review.reviewer)
                 .foregroundColor(.pink)
+                .padding(.vertical, 5)
+
             TextEditor(text: $review.comment)
                 .font(.subheadline)
                 .padding(.leading, 30)
         }
+    }
+}
+
+struct EditView_Previews: PreviewProvider {
+    static var previews: some View {
+        EditView(restaurant: restaurantsDefaultData.restaurant[0])
     }
 }

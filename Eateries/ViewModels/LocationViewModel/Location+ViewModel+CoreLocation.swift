@@ -9,6 +9,7 @@ import CoreLocation
 
 private var isGeoCoding = false
 
+
 extension LocationViewModel {
     var location: CLLocation {
         get { CLLocation(latitude: model.latitude, longitude: model.longitude) }
@@ -27,20 +28,27 @@ extension LocationViewModel {
     }
 
     func lookupName() {
-        guard !isGeoCoding else { return }
+//        guard !isGeoCoding else { return }
         isGeoCoding = true
         let geoCoder = CLGeocoder()
-        geoCoder.reverseGeocodeLocation(location) {
-            isGeoCoding = false
-            guard let placeMarks = $0, let placeMark = placeMarks.first else {
-                if let error = $1 {
-                    print("Error looking up location \(error.localizedDescription)")
-                } else {
-                    print("Error looking up location \(String(describing: $1))")
+        print(model.name)
+        if model.name.isEmpty {
+            print("Empty name. Attempting change...")
+            geoCoder.reverseGeocodeLocation(location) {
+                isGeoCoding = false
+                guard let placeMarks = $0, let placeMark = placeMarks.first else {
+                    if let error = $1 {
+                        print("Error looking up location \(error.localizedDescription)")
+                    } else {
+                        print("Error looking up location \(String(describing: $1))")
+                    }
+                    return
                 }
-                return
+                self.model.name = placeMark.locality ?? placeMark.subLocality ?? placeMark.administrativeArea ?? placeMark.country ?? "<unknown>"
             }
-            self.model.name = placeMark.name ?? placeMark.locality ?? placeMark.subLocality ?? placeMark.administrativeArea ?? placeMark.country ?? "<unknown>"
+        }
+        else {
+            print("Tried to change name but name not empty")
         }
     }
 

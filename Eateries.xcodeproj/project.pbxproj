@@ -265,14 +265,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B320390926637B090042A3DA /* Location Views */ = {
+			isa = PBXGroup;
+			children = (
+				B323CA58265FD216004C5E5A /* MapView.swift */,
+				B323CA68265FD326004C5E5A /* LazyTextField.swift */,
+				B323CA60265FD2E7004C5E5A /* LocationView.swift */,
+			);
+			path = "Location Views";
+			sourceTree = "<group>";
+		};
 		B323C9E0265FAFF6004C5E5A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B3B28616266379DC0048E992 /* LocationViewModel */,
 				B323C9E1265FB011004C5E5A /* Restaurant+ViewModel.swift */,
 				B323C9FD265FB0E9004C5E5A /* Eateries+ViewModel.swift */,
-				B323CA35265FCEA7004C5E5A /* Location+ViewModel.swift */,
-				B323CA3D265FCEED004C5E5A /* Location+ViewModel+CoreLocation.swift */,
-				B323CA4A265FCF2D004C5E5A /* Location+ViewModel+MapKit.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -289,11 +297,11 @@
 		B3688B8826410695006A8EF9 /* Detail Views */ = {
 			isa = PBXGroup;
 			children = (
+				B320390926637B090042A3DA /* Location Views */,
 				B3688B7926410159006A8EF9 /* Detail+EditRouter.swift */,
 				B3688B7E26410173006A8EF9 /* DetailView.swift */,
 				B3688B8326410180006A8EF9 /* EditView.swift */,
 				B396813C2643BAC900A498D8 /* ReviewCellView.swift */,
-				B323CA60265FD2E7004C5E5A /* LocationView.swift */,
 			);
 			path = "Detail Views";
 			sourceTree = "<group>";
@@ -321,10 +329,18 @@
 			children = (
 				B3688B89264106AD006A8EF9 /* Master Views */,
 				B3688B8826410695006A8EF9 /* Detail Views */,
-				B323CA58265FD216004C5E5A /* MapView.swift */,
-				B323CA68265FD326004C5E5A /* LazyTextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B3B28616266379DC0048E992 /* LocationViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B323CA35265FCEA7004C5E5A /* Location+ViewModel.swift */,
+				B323CA3D265FCEED004C5E5A /* Location+ViewModel+CoreLocation.swift */,
+				B323CA4A265FCF2D004C5E5A /* Location+ViewModel+MapKit.swift */,
+			);
+			path = LocationViewModel;
 			sourceTree = "<group>";
 		};
 		B3E695B42640FCFE008FCFAC = {
@@ -359,8 +375,8 @@
 			children = (
 				B3E695C02640FCFE008FCFAC /* EateriesApp.swift */,
 				B3688B9126411056006A8EF9 /* Views */,
-				B3E695C42640FCFE008FCFAC /* Assets.xcassets */,
 				B3E695C92640FCFE008FCFAC /* Info.plist */,
+				B3E695C42640FCFE008FCFAC /* Assets.xcassets */,
 				B323C9E0265FAFF6004C5E5A /* ViewModels */,
 				B3E695C62640FCFE008FCFAC /* Preview Content */,
 				B3688B8D264106BE006A8EF9 /* Model */,

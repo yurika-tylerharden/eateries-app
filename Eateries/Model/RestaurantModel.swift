@@ -78,10 +78,24 @@ class Restaurant: ObservableObject, Decodable, Encodable, Identifiable {
         try container.encode(image, forKey: .image)
         try container.encode(review, forKey: .review)
     }
+    
     public struct Location: Decodable, Encodable {
         var name: String
         var latitude: Double
         var longitude: Double
+    }
+    
+//    func changeLocationName(){
+//        self.location.name = name
+//        saveLocationData()
+//    }
+    
+    func saveLocationData() {
+//        let newData = self.location
+//        print(newData)
+//        model = newData
+//        print(model)
+        EateriesApp.save()
     }
     
 }

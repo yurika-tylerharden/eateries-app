@@ -29,6 +29,8 @@ struct RouterView: View {
             }
         }
         .navigationBarItems(trailing: EditButton())
+        .navigationBarTitleDisplayMode(.inline)
+
     }
 }
 

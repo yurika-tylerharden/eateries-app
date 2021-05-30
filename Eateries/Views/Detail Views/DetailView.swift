@@ -14,35 +14,52 @@ struct DetailView: View {
     @ObservedObject var restaurant: Restaurant
     
     var body: some View {
-            VStack() {
-                //image from URL
-                Image(uiImage: restaurant.imageURL)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                    .shadow(radius: 7)
-                    .padding(20)
-                    .animation(.easeInOut)
-                Text(restaurant.nameString)
-                    .font(.largeTitle)
-                    .padding([.leading, .bottom, .trailing], 15)
-                    .padding(.top, 5)
-            }
-            //The navigation view containing all restaurant details such as description, story, recipes, and ingredients
-            RestaurantDetailListView(restaurant: restaurant)
+        HStack {
+            Spacer()
+            ImageTitleView().environmentObject(restaurant)
+            Spacer()
+        }.padding(.top, 20)
+        //The listcontaining all restaurant details such as description, story, recipes, and ingredients
+        RestaurantDetailListView().environmentObject(restaurant)
+    }
+}
+struct ImageTitleView: View {
+    @EnvironmentObject var restaurant: Restaurant
+
+    var body: some View {
+        VStack() {
+            //image from URL
+            Image(uiImage: restaurant.imageURL)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 200, height: 200)
+                .border(Color.blue)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                .shadow(radius: 7)
+                .animation(.easeInOut)
+            Text(restaurant.nameString)
+                .font(.largeTitle)
+                .padding([.leading, .bottom, .trailing], 15)
+                .padding(.top, 5)
+        }
     }
 }
 
+
 //Structure containing restaurant details
 struct RestaurantDetailListView: View {
-    @ObservedObject var restaurant: Restaurant
+    @EnvironmentObject var restaurant: Restaurant
+    
     var body: some View {
         Section(header: Text("Location")) {
             NavigationLink(
-                destination: LocationView(location: LocationViewModel(name: restaurant.location.name, latitude: restaurant.location.latitude, longitude: restaurant.location.longitude)),
+                destination: LocationView(location: restaurant.location).environmentObject(restaurant),
                 label: {
                     Text(restaurant.location.name)
+                        .padding(8.0)
+                        .font(.subheadline)
+
                 }
             )
         }.padding(8.0)
@@ -54,7 +71,7 @@ struct RestaurantDetailListView: View {
         Section(header: Text("Reviews")) {
             ForEach(restaurant.review) { review in
                 ReviewRowDetailView(review: review)
-            }
+            }.padding(8.0)
         }.padding(8.0)
     }
 }
@@ -62,14 +79,21 @@ struct RestaurantDetailListView: View {
 struct ReviewRowDetailView: View {
     @ObservedObject var review: Review
     var body: some View {
-        VStack {
+        VStack(alignment: .leading){
             //image of food converted from imageURL
             Text(review.reviewer)
                 .foregroundColor(.pink)
+                .padding(.vertical, 5)
             Text(review.comment)
                 .font(.subheadline)
                 .italic()
                 .padding(.leading, 30)
         }
+    }
+}
+
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+            RouterView(restaurant: restaurantsDefaultData.restaurant[0])
     }
 }

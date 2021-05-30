@@ -12,10 +12,10 @@ class LocationViewModel: NSObject, ObservableObject {
     @Published var latitudeSpan = 0.1
     @Published var longitudeSpan = 0.1
 
-    init(name: String, latitude: Double, longitude: Double) {
-        model = Restaurant.Location(name: name, latitude: latitude, longitude: longitude)
+    init(model: Restaurant.Location) {
+        self.model = model
     }
-
+    
     var latitudeString: String {
         get { "\(model.latitude)" }
         set {
@@ -33,12 +33,3 @@ class LocationViewModel: NSObject, ObservableObject {
     }
 }
 
-extension LocationViewModel {
-    func save() {
-        let newData = Restaurant.Location(name: model.name, latitude: model.latitude, longitude: model.longitude)
-        print(newData)
-        model = newData
-        print(model)
-        EateriesApp.save()
-    }
-}
