@@ -44,7 +44,7 @@ extension LocationViewModel {
                     }
                     return
                 }
-                self.model.name = placeMark.locality ?? placeMark.subLocality ?? placeMark.administrativeArea ?? placeMark.country ?? "<unknown>"
+                self.model.name = placeMark.locality ?? placeMark.subLocality ?? placeMark.administrativeArea ?? placeMark.country ?? "Unknown Location"
             }
         }
         else {

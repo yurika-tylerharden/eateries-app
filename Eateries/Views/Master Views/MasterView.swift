@@ -34,6 +34,6 @@ struct MasterView: View {
                 withAnimation { eateries.addItem() } }) { Label("", systemImage: "plus")
             })
             .listStyle(InsetGroupedListStyle())
-        }.navigationBarTitle(self.mode?.wrappedValue == .active ? Text("") : Text(eateries.navigationTitleString) )
+        }.navigationBarTitle(Text(eateries.navigationTitleString) )
     }
 }

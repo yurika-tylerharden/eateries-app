@@ -20,7 +20,7 @@ extension Eateries {
 //    }
 
     func addItem() {
-        let newRestaurant = Restaurant(name: "New Restaurant", location: Restaurant.Location(name: "Brisbane", latitude: -27.023, longitude: 157.056), notes: "Enter notes", image: "Enter image", review: [Review(reviewer: "Enter name", comment: "Enter review")])
+        let newRestaurant = Restaurant(name: "New Restaurant", location: Restaurant.Location(name: "", latitude: 0, longitude: 0), notes: "Enter notes", image: "Enter image", review: [Review(reviewer: "Enter name", comment: "Enter review")])
         restaurant.append(newRestaurant)
         EateriesApp.save()
     }
